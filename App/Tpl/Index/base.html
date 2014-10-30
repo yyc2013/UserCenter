@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta property="qc:admins" content="11467177704524534163161100637571645060007535275352356452" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link href="/App/Public/css/bootstrap.min.css" rel="stylesheet" type ="text/css"/>
+</head>
+<body>
+<block name="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
+	 <div class="navbar-header  ">
+		<a class="navbar-brand " href="doc">文档中心</a>
+	 </div>
+	 <div class="navbar-header ">
+		<a class="navbar-brand " href="appList">我的应用</a>
+	 </div>
+	 <div class="navbar-header  ">
+		<a class="navbar-brand " href="#">评论系统</a>
+	 </div>
+
+	 <if condition="$identifier eq 'a'">
+	 <div class="navbar-header  ">
+		<a class="navbar-brand " href="adminApp">后台管理</a>
+	 </div>
+	 </if>
+	 
+	 <div class="navbar-header  ">
+		<a class="navbar-brand " href="userCenter">个人中心</a>
+	 </div>
+	 <div class="navbar-header pull-right ">
+	 	<if condition="$user_name">
+		<a class="navbar-brand " href="logout">登出</a>
+	 	</if>
+		<a class="navbar-brand " href="#">{$user_name}</a>
+	 </div>
+</nav>
+</block>
+<div class="container">
+<block name="content">
+</block>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> 
+<script src="/App/Public/js/bootstrap.min.js"></script> 
+<script src="/App/Public/js/my.js"></script>
+
+</body>
+</html>

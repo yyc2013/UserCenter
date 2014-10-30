@@ -1,0 +1,4 @@
+App Key=934638973
+App Secret=1fc268aa767331c8005448533bc31203
+code_redirect_uri=http://centertest1.sinaapp.com/index.php/User/weiboCode
+access_token_redirect_uri=http://centertest1.sinaapp.com/index.php/User/accessRedirect

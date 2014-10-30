@@ -1,0 +1,22 @@
+<extend name="base"/>
+<block name="content">
+	<div class="row">
+		<div class="row col-md-3">
+			<div class="list-group ">
+			  <a href="" class="list-group-item active">功能</a>
+			  <a href="appList" class="list-group-item">应用列表</a>
+			  <a href="createApp" class="list-group-item">创建应用</a>
+			</div>
+		</div>
+
+		<div class="well-row col-md-9 ">
+			<h4><label>App Key:</label>{$appid}</h4><br>
+			<h4><label>App Secret:</label>{$secret}</h4><br>
+			<h4><label>应用名称:</label>{$name}</h4><br>
+			<h4><label>创建邮箱:</label>{$email}</h4><br>
+			<h4><label>创建时间:</label>{$time}<h4><br>
+			<h4><label>描述:</label></h4><br>
+			<textarea rows="5" cols="50" disabled>{$description}</textarea>
+		</div>
+	</div>
+</block>

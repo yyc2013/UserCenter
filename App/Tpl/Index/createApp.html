@@ -1,0 +1,31 @@
+<extend name="base"/>
+<block name="content">
+
+<div class="container ">
+	<div class="row">
+		<div class="row col-md-3">
+			<div class="list-group ">
+			  <a href="" class="list-group-item active">功能</a>
+			  <a href="appList" class="list-group-item">应用列表</a>
+			  <a href="createApp" class="list-group-item">创建应用</a>
+			</div>
+		</div>
+		<div class="well-row col-md-9"> 
+			<form action="" role="form" method="post">
+				<div class="form-group ">
+					<label>应用名称</label>	
+						<input type="text" class="form-control " name="appname">
+				</div>
+				<div class="form-group">
+					<label>描述</label>
+						<textarea rows="5" class="form-control "name="description"></textarea>
+				</div>
+				<div class="form-group">	
+						<input type="submit" name="submit" class="form-control btn-primary"value="创建">
+				</div>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+</block>

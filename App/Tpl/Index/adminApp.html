@@ -1,0 +1,52 @@
+<extend name="base"/>
+<block name="content">
+	<div class="row">
+		<div class="row col-md-3">
+			<div class="list-group ">
+			  <a href="" class="list-group-item active">功能</a>
+			  <a href="adminApp" class="list-group-item">应用管理</a>
+			  <a href="adminUser" class="list-group-item">用户管理</a>
+			</div>
+		</div>
+
+		<div class="well-row col-md-9 ">
+			
+			<form role="role" action="" method="post">
+				<div class=" form-group">
+					<div class="col-md-3">
+						<select class="form-control" name="keytype">
+							<option>appname</option>
+							<option>email</option>
+							<option>appid</option>				
+						</select>
+					</div>
+					<div class="col-md-6">
+						<input type="text" class="form-control" name="key">
+					</div>
+					<div class="col-md-3">
+					   <input type="submit"  class=" btn-success  form-control"  name="submit" value="检索">
+					</div>	
+				</div>
+			</form>
+			<br><br>
+			<table class="table table-bordered">
+			<tr>
+				<td class="col-md-2">应用ID</td>
+				<td class="col-md-2">应用名</td>
+				<td class="col-md-2">邮箱</td>
+				<td class="col-md-2">操作</td>
+			</tr>
+			<volist name="app" id="list">
+			<tr>
+				<td><a href="appContent?appid={$list.appid}">{$list.appid}</td>
+				<td>{$list.name}</td>
+				<td>{$list.email}</td>
+				<td><a href="deauthorize?appid={$list.appid}" conclick="return deauthorize()">解除授权</a>&nbsp;&nbsp;
+				    <a href="deleteApp?appid={$list.appid}" onclick="return deleteApp()">删除应用</a></td>
+				</tr>
+			</volist>
+			</table>
+		
+		</div>
+	</div>
+</block>

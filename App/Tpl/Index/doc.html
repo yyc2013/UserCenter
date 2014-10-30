@@ -1,0 +1,135 @@
+<extend name="base"/>
+<block name="content">
+<div class="container col-md-8">
+
+	<br><br>
+	<h2><strong>Oauth2.0接入说明</strong></h2>
+	<br><br>
+	<h3><strong>URL</strong></h3>
+	<label>http://centertest1.sinaapp.com/index.php/Oauth/login</label>
+	<h3><strong>HTTP请求方式</strong></h3>
+	<label>GET</label>
+	
+	<table class="table table-bordered">
+	<tr>
+		<td class="col-md-2">字段</td>
+		<td class="col-md-2">必选</td>
+		<td class="col-md-2">类型及范围</td>
+		<td class="col-md-4">说明</td>
+	</tr>
+	<tr>
+		<td>client_id</td>
+		<td>true</td>
+		<td>string</td>
+		<td>申请应用时分配的App key</td>
+	</tr>
+
+	<tr>
+		<td>redirect_uri</td>
+		<td>true</td>
+		<td>string</td>
+    	<td>授权回调地址，站外应用需与设置的回调地址一致，用于获取code。</td>
+	</tr>
+	
+	</table>
+
+
+	<h3><strong>返回数据</strong></h3>
+	
+	
+	<table class="table table-bordered">
+	<tr>
+		<td class="col-md-2">字段</td>
+		<td class="col-md-2">字段类型</td>
+		<td class="col-md-4">说明</td>
+	</tr>
+	<tr>
+		<td>code</td>
+		<td>string</td>
+		<td>用于调用access_token，接口获取授权后的access token.</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+<br><br>
+	<h3><strong>URL</strong></h3>
+	<label>http://centertest1.sinaapp.com/index.php/Oauth/grantAccessToken</label>
+	<h3><strong>HTTP请求方式</strong></h3>
+	<label>POST</label>
+	
+	<table class="table table-bordered">
+	<tr>
+		<td class="col-md-2">字段</td>
+		<td class="col-md-2">必选</td>
+		<td class="col-md-2">类型及范围</td>
+		<td class="col-md-4">说明</td>
+	</tr>
+	<tr>
+		<td>client_id</td>
+		<td>true</td>
+		<td>string</td>
+		<td>申请应用时分配的App key</td>
+	</tr>
+	<tr>
+		<td>code</td>
+		<td>true</td>
+		<td>string</td>
+		<td>访问login通过登陆后返回的参数</td>
+	</tr>
+	</table>
+
+
+	<h3><strong>返回数据</strong></h3>
+	
+	{"access_token":"ACCESS_TOKEN"}
+
+
+
+<br><br><br><br>
+ <hr>
+	<h2><strong>用户接口</strong></h2>
+	<br><br>
+	<h3><strong>getUserInfo</strong></h3>
+	<label>http://centertest1.sinaapp.com/index.php/Oauth/getUserInfo</label>
+	<h3><strong>HTTP请求方式</strong></h3>
+	<label>POST</label>
+	
+	<table class="table table-bordered">
+	<tr>
+		<td class="col-md-2">字段</td>
+		<td class="col-md-2">必选</td>
+		<td class="col-md-2">类型及范围</td>
+		<td class="col-md-4">说明</td>
+	</tr>
+	<tr>
+		<td>client_id</td>
+		<td>true</td>
+		<td>string</td>
+		<td>申请应用时分配的App key</td>
+	</tr>
+	<tr>
+		<td>access_token</td>
+		<td>true</td>
+		<td>string</td>
+		<td>Oauth2.0授权得到的验证码</td>
+	</tr>
+	</table>
+
+
+	<h3><strong>返回数据</strong></h3>
+	<p>
+	{<br>
+		"email":"example@example.com",<br>
+		"nickname":"张三",<br>
+		"birthday":"2011-1-1",<br>
+		"icon":"http://centertest1-public.stor.sinaapp.com/upload/img/icon/1414118213.jpg"<br>
+	}
+	</p>
+
+</div>
+
+</block>

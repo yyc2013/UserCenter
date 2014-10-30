@@ -1,0 +1,31 @@
+<extend name="base"/>
+<block name="content">
+	<div class="row">
+		<div class="row col-md-3">
+			<div class="list-group ">
+			  <a href="" class="list-group-item active">功能</a>
+			  <a href="appList" class="list-group-item">应用列表</a>
+			  <a href="createApp" class="list-group-item">创建应用</a>
+			</div>
+		</div>
+
+		<div class="well-row col-md-9 ">
+			<table class="table table-bordered">
+				<tr>
+					<td class="col-md-2"><label>App Key</label></td>
+					<td class="col-md-4"><label>应用名称</label></td>
+					<td class="col-md-2"><label>操作</label></td>
+				</tr>
+				<volist name="app" id="list">
+				<tr>
+					<td><a href="appContent?appid={$list.appid}">{$list.appid}</a></td>
+					<td>{$list.name}</td>
+					<td>
+						<a href="deauthorize?appid={$list.appid}" onclick="return deauthorize()">解除授权</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="deleteApp?appid={$list.appid}" onclick="return deleteApp()">删除应用</a></td>
+				</tr>
+				</volist>
+			</table>
+		</div>
+	</div>
+</block>
