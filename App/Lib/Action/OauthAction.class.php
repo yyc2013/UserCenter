@@ -40,7 +40,7 @@ class OauthAction extends Action{
 				$expires=time()+3600;
 				$sql="update code set code='".$code."',expires = ".$expires.", redirect_uri='".$callback."' where appid= '".$appid."'";
 				$mysql->runSql($sql);
-				echo "<script language='javascript'>location.href='".$callback."?code=".$code."'</script>";		
+				echo "<script language='javascript'>location.href='".$callback."?code=".$code."';</script>";		
 			} else{
 				$this->error("无效的client_id".$appid);
 			}

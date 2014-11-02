@@ -3,7 +3,7 @@
 class IndexAction extends Action{
 	protected function _initialize() {
         header("Content-Type:text/html; charset=utf-8");
-        $mysql = new SaeMysql();
+        /*$mysql = new SaeMysql();
         $file = fopen($_SERVER['DOCUMENT_ROOT']."/App/Conf/admin.txt","r");
 		$str = fgets($file);
 		$emails=explode('=',$str);
@@ -21,7 +21,7 @@ class IndexAction extends Action{
 			}	
 		}else{
 			$this->error("请下载代码到本地配置管理员账户信息，之后同步到SAE！配置文件/Conf/admin.txt");
-		}		
+		}		*/
 		
     }
 	private function verify(){
@@ -59,23 +59,13 @@ class IndexAction extends Action{
 		return $secret;
 	}
 	public function test(){
-		/*$file = fopen($_SERVER['DOCUMENT_ROOT']."/App/Conf/weibo_login_config.txt","r");
+		$filename=$_SERVER['DOCUMENT_ROOT']."/app_UserCenter.sql";
+		$sql = file_get_contents($filename);
+		$sql = str_replace("\r", "\n", $sql );
 		
-		$str = fgets($file);
-		$keys=explode('=',$str);
-		$key=$keys[1];
-		
-		$str = fgets($file);
-		$secrets = explode('=', $str);
-		$secret=$secrets[1];
 
-		$str = fgets($file);
-		$redirect_uris = explode('=', $str);
-		$redirect_uri=$redirect_uris[1];*/
-		$filename=$_SERVER['DOCUMENT_ROOT']."/App/Conf/weibo_login_config.txt";
-		$ini = parse_ini_file($filename);
-		print_r($ini);
 	}
+
 	public function register(){
 		$submit=$_POST['submit'];
 		if($submit){
@@ -314,6 +304,7 @@ class IndexAction extends Action{
 
 		//redirect_uri跳转？
 		$redirect_uri = "http://".$_SERVER['HTTP_HOST']."/Index/accessRedirect";
+		
 		$ch = curl_init();
 		$url="https://api.weibo.com/oauth2/access_token?client_id=".$param['AppKey']."&client_secret=".$param['AppSecret']."&grant_type=authorization_code&redirect_uri=".$redirect_uri."&code=".$code;
 		curl_setopt($ch,CURLOPT_URL,$url);

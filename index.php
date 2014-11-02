@@ -7,4 +7,5 @@ define('APP_DEBUG',true);
 define('ENGINE_NAME','sae');
 require THINK_PATH.'ThinkPHP.php';
 
+
 ?>
